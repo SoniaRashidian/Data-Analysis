@@ -1,129 +1,239 @@
-# 🌬️ Wind Power Exploratory Data Analysis
+Wind Power Data Analysis
 
-A Python data-analysis project exploring wind turbine operational data from a wind farm in China.
+A Python-based exploratory data analysis (EDA) project using the Spatial Dynamic Wind Power Forecasting (SDWPF) dataset. The project demonstrates practical data loading, cleaning, statistical analysis, aggregation, visualization, and time-series preparation using Python.
 
-This project focuses on exploratory data analysis (EDA), data quality assessment, statistical summaries, visualization, and understanding the relationship between wind conditions and wind power generation.
+Project Overview
 
-## 📊 Project Overview
+This project was completed as a Python and data-analysis practice project using real-world wind-turbine operational data.
 
-The dataset contains measurements from **134 wind turbines** in a wind farm and covers approximately 245 days of operation.
+The SDWPF dataset contains observations from 134 wind turbines in a wind farm in China. The variables include meteorological conditions, turbine-control measurements, reactive power, and active power. In the original analysis, Patv (kW) — active power — is the target variable for prediction. 
 
-The main variables include:
+The original exploratory workflow covered package import, dataset loading, missing-value analysis, descriptive statistics, turbine selection, and several visualization techniques including histograms, box/violin plots, scatterplots, pairplots, correlation matrices, and time-series plots. 
 
-* Wind speed
-* Wind direction
-* External temperature
-* Internal turbine temperature
-* Nacelle direction
-* Blade pitch angles
-* Reactive power
-* Active power
+This repository presents a cleaned, independent Python script extracted from that analysis workflow.
 
-`Patv (kW)` — active power — is treated as the main output variable for the analysis.
+Dataset
 
-## 🎯 Objectives
+The dataset contains information from 134 turbines and includes the following variables: 
 
-* Load and inspect wind turbine data
-* Identify and quantify missing values
-* Calculate descriptive statistics
-* Investigate data quality and potential sensor errors
-* Explore distributions of wind turbine variables
-* Analyze relationships between variables
-* Examine the relationship between wind speed and active power
-* Analyze turbine behavior over time
-* Identify patterns that could support future wind power prediction
+Variable
 
-## 🛠️ Technologies
+Description
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
+TurbID
 
-## 📚 Python Concepts Practiced
+Wind turbine identification number
 
-* Reading CSV data with Pandas
-* DataFrame manipulation
-* Missing-value analysis
-* Data cleaning
-* Descriptive statistics
-* Data filtering
-* Grouping and aggregation
-* Statistical correlation
-* Data visualization
-* Histograms
-* Box plots
-* Violin plots
-* Scatterplots
-* Pairplots
-* Time-series visualization
+Day
 
-## 🔍 Analysis
+Day of the observation
 
-### Missing Values
+Tmstamp
 
-The dataset contains missing observations across the numerical measurement variables. Missing-value analysis is performed before continuing with the exploratory analysis.
+Measurement time
 
-### Descriptive Statistics
+Wspd (m/s)
 
-Summary statistics are calculated for the numerical variables to investigate their central tendency, variability, and range.
+Wind speed
 
-### Wind Speed and Power
+Wdir (°)
 
-The relationship between wind speed and active power is investigated using scatterplots. This provides insight into how changes in wind conditions relate to electricity generation.
+Wind direction
 
-### Correlation Analysis
+Etmp (°C)
 
-A Pearson correlation matrix is used to examine linear relationships between the numerical variables.
+External/environmental temperature
 
-### Time-Series Analysis
+Itmp (°C)
 
-The day and timestamp information are converted into a datetime representation to investigate how turbine measurements change over time.
+Internal turbine temperature
 
-## 📁 Project Structure
+Ndir (°)
 
-```text
-Day06_WindPowerExploratoryAnalysis/
+Nacelle direction
+
+Pab1 (°)
+
+Blade 1 pitch angle
+
+Pab2 (°)
+
+Blade 2 pitch angle
+
+Pab3 (°)
+
+Blade 3 pitch angle
+
+Prtv (kW)
+
+Reactive power
+
+Patv (kW)
+
+Active power
+
+Data Quality
+
+The original dataset contains 4,727,520 rows. The analysis identified 49,518 rows containing missing values, corresponding to approximately 1.047% of the dataset. fileciteturn0file0L191-L210
+
+For this practice analysis, rows containing missing values are removed before the statistical and visualization steps.
+
+The original workflow also noted unusually negative temperature values that were likely caused by sensor errors; the original exercise provided an interpolation option for visualizing these temperature time series.
+
+Analysis Performed
+
+1. Data Loading and Inspection
+
+The project loads the CSV file with Pandas, assigns descriptive column names, and inspects the dataset structure and first observations.
+
+2. Missing-Value Analysis
+
+Missing values are counted for each feature and their percentage of the dataset is calculated.
+
+missing_values = data.isnull().sum()
+missing_percentage = (missing_values / len(data)) * 100
+
+Rows containing missing values are then removed for the subsequent analysis.
+
+3. Descriptive Statistics
+
+The numerical variables are summarized using:
+
+clean_data[numerical_features].describe()
+
+The resulting statistics include count, mean, standard deviation, minimum, quartiles, and maximum values. 
+
+4. Turbine-Level Analysis
+
+Mean active power is calculated for each turbine and the turbines are ordered by average power output.
+
+clean_data.groupby("TurbID")["Patv (kW)"].mean()
+
+The original exercise also used a subset of 10 higher-performing turbines for detailed exploration. 
+
+5. Correlation Analysis
+
+A Pearson correlation matrix is generated for the numerical variables to investigate relationships among wind speed, temperatures, turbine-control variables, reactive power, and active power.
+
+6. Wind Speed vs. Active Power
+
+A scatterplot is used to explore the relationship between wind speed and active power. This is particularly relevant to wind-energy analysis because wind speed is an important factor associated with turbine power production. The original exercise specifically highlights investigation of relationships with Patv (kW). 
+
+7. Time-Series Analysis
+
+The original dataset stores the day and measurement time separately. These fields are combined into a datetime variable for time-series analysis. The source material specifies that Day 1 corresponds to May 1, 2020. 
+
+The script then plots active power over time for one selected turbine.
+
+Python Skills Demonstrated
+
+Python programming
+
+Pandas
+
+Matplotlib
+
+Seaborn
+
+Data loading and inspection
+
+Missing-value analysis
+
+Data cleaning
+
+Descriptive statistics
+
+groupby() aggregation
+
+Correlation analysis
+
+Data visualization
+
+Time-series preparation
+
+Exploratory Data Analysis (EDA)
+
+Project Structure
+
+wind-power-data-analysis/
 │
-├── wind_power_exploration.ipynb
-├── README.md
+├── data/
+│   └── wtbdata_245days.csv
 │
-└── data/
-    └── wtbdata_245days.csv
-```
+├── wind_power_analysis.py
+│
+└── README.md
 
-## ▶️ How to Run
+Note: The raw SDWPF dataset is large. For GitHub, it is preferable to keep the dataset out of the repository and provide the official/source link instead, unless its redistribution terms permit you to upload it.
 
-Install the required Python packages:
+How to Run
 
-```bash
-pip install pandas numpy matplotlib seaborn jupyter
-```
+Install the required packages:
 
-Launch Jupyter Notebook:
+pip install pandas matplotlib seaborn
 
-```bash
-jupyter notebook
-```
+Place the dataset at:
 
-Then open:
+data/wtbdata_245days.csv
 
-```text
-wind_power_exploration.ipynb
-```
+Then run:
 
-## 🚀 Future Improvements
+python wind_power_analysis.py
 
-* Develop a wind power prediction model
-* Compare machine-learning algorithms
-* Engineer additional time-based features
-* Investigate turbine-level performance differences
-* Detect anomalous turbine behavior
-* Evaluate prediction accuracy using appropriate performance metrics
-* Develop an interactive wind-power dashboard
+The script prints the main data-quality and statistical results and generates visualizations for the correlation matrix, wind-speed/power relationship, and active-power time series.
 
-## 👩‍💻 Author
+Analysis Workflow
 
-Created by **Sono** as part of my Python programming and data-analysis practice.
+Raw Wind-Turbine Data
+        ↓
+Data Inspection
+        ↓
+Missing-Value Analysis
+        ↓
+Data Cleaning
+        ↓
+Descriptive Statistics
+        ↓
+Turbine-Level Aggregation
+        ↓
+Correlation Analysis
+        ↓
+Wind Speed / Power Analysis
+        ↓
+Time-Series Analysis
+
+Learning Outcome
+
+This project provided practical experience in moving from raw operational data to structured exploratory analysis.
+
+It demonstrates how Python can be used to:
+
+assess data quality,
+
+identify and handle missing observations,
+
+summarize large datasets statistically,
+
+compare turbine-level performance,
+
+investigate relationships between variables,
+
+visualize power-generation behavior, and
+
+prepare operational data for subsequent predictive modelling.
+
+The project therefore serves as a foundation for a later wind-power prediction workflow.
+
+Source
+
+The analysis is based on the Spatial Dynamic Wind Power Forecasting (SDWPF) dataset and the associated exploratory-analysis learning material. The provided material describes the dataset as containing data from 134 wind turbines and links to the SDWPF research paper.
+
+Research paper:
+
+https://arxiv.org/abs/2208.04360
+
+Portfolio Context
+
+This repository represents a Python and data-analysis practice project focused on exploratory analysis of wind-energy data.
+
+It demonstrates practical experience with a real-world energy dataset and complements broader interests in data analysis, optimization, quantitative modelling, risk-aware decision-making, and energy systems.
