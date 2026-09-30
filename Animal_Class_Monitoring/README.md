@@ -6,9 +6,9 @@ This project performs exploratory data analysis (EDA) on the **Snapshot Karoo** 
 
 The analysis focuses on three main dimensions:
 
-* **Animal class** — the animal category assigned to each image.
-* **Camera-trap location** — the location encoded in each image filename.
-* **Image characteristics** — visual inspection of images from different locations and potentially difficult-to-classify examples.
+* **Animal class**
+* **Camera-trap location** 
+* **Image characteristics** 
 
 The Snapshot Karoo dataset is part of the **Lila BC project** and contains camera-trap images collected for biodiversity monitoring. The original project describes 14,889 image sequences containing 38,074 images. A reduced mini-dataset was used for the analysis.
 
@@ -370,3 +370,5 @@ These characteristics should be considered before developing a classification mo
 * Feature/metadata engineering
 * Python programming
 * Critical assessment of machine-learning data quality
+
+**Project Source: AI & climate change by deeplearning.AI 
