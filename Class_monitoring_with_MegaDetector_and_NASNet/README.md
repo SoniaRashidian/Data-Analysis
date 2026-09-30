@@ -64,7 +64,7 @@ NASNet-Mobile
 
 ---
 
-# Part 1 — MegaDetector Object Detection
+# Part 1: MegaDetector Object Detection
 
 ## Objective
 
@@ -247,7 +247,7 @@ This applies the detection-and-cropping pipeline to the dataset and generates th
 
 ---
 
-# Part 2 — NASNet Animal Classification
+# Part 2: NASNet Animal Classification
 
 ## Objective
 
