@@ -16,7 +16,6 @@ columns = [
     "Pab3 (°)", "Prtv (kW)", "Patv (kW)"
 ]
 
-# Load and inspect data
 data = pd.read_csv(DATA_PATH)
 data.columns = columns
 
