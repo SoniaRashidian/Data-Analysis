@@ -372,5 +372,4 @@ These characteristics should be considered before developing a classification mo
 * Critical assessment of machine-learning data quality
 
 **Project Source:**
-
 [link]:https://www.coursera.org/specializations/ai-for-good
