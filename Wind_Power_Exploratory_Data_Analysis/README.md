@@ -1,16 +1,14 @@
 Wind Power Data Analysis
 
-A Python-based exploratory data analysis (EDA) project using the Spatial Dynamic Wind Power Forecasting (SDWPF) dataset. The project demonstrates practical data loading, cleaning, statistical analysis, aggregation, visualization, and time-series preparation using Python.
+An exploratory data analysis (EDA) project using the Spatial Dynamic Wind Power Forecasting (SDWPF) dataset. The project demonstrates practical data loading, cleaning, statistical analysis, aggregation, visualization, and time-series preparation using Python.
 
 Project Overview
 
-This project was completed as a Python and data-analysis practice project using real-world wind-turbine operational data.
+This project was completed as a data-analysis practice project using real-world wind-turbine operational data.
 
 The SDWPF dataset contains observations from 134 wind turbines in a wind farm in China. The variables include meteorological conditions, turbine-control measurements, reactive power, and active power. In the original analysis, Patv (kW) — active power — is the target variable for prediction. 
 
 The original exploratory workflow covered package import, dataset loading, missing-value analysis, descriptive statistics, turbine selection, and several visualization techniques including histograms, box/violin plots, scatterplots, pairplots, correlation matrices, and time-series plots. 
-
-This repository presents a cleaned, independent Python script extracted from that analysis workflow.
 
 Dataset
 
@@ -80,7 +78,7 @@ For this practice analysis, rows containing missing values are removed before th
 
 The original workflow also noted unusually negative temperature values that were likely caused by sensor errors; the original exercise provided an interpolation option for visualizing these temperature time series.
 
-Analysis Performed
+Analysis Performed:
 
 1. Data Loading and Inspection
 
@@ -125,34 +123,6 @@ The original dataset stores the day and measurement time separately. These field
 
 The script then plots active power over time for one selected turbine.
 
-Python Skills Demonstrated
-
-Python programming
-
-Pandas
-
-Matplotlib
-
-Seaborn
-
-Data loading and inspection
-
-Missing-value analysis
-
-Data cleaning
-
-Descriptive statistics
-
-groupby() aggregation
-
-Correlation analysis
-
-Data visualization
-
-Time-series preparation
-
-Exploratory Data Analysis (EDA)
-
 Project Structure
 
 wind-power-data-analysis/
@@ -164,23 +134,8 @@ wind-power-data-analysis/
 │
 └── README.md
 
-Note: The raw SDWPF dataset is large. For GitHub, it is preferable to keep the dataset out of the repository and provide the official/source link instead, unless its redistribution terms permit you to upload it.
 
-How to Run
-
-Install the required packages:
-
-pip install pandas matplotlib seaborn
-
-Place the dataset at:
-
-data/wtbdata_245days.csv
-
-Then run:
-
-python wind_power_analysis.py
-
-The script prints the main data-quality and statistical results and generates visualizations for the correlation matrix, wind-speed/power relationship, and active-power time series.
+The script prints key data-quality and statistical results and generates visualizations of the correlation matrix, wind-speed/power relationship, and active-power time series.
 
 Analysis Workflow
 
@@ -206,34 +161,4 @@ Learning Outcome
 
 This project provided practical experience in moving from raw operational data to structured exploratory analysis.
 
-It demonstrates how Python can be used to:
 
-assess data quality,
-
-identify and handle missing observations,
-
-summarize large datasets statistically,
-
-compare turbine-level performance,
-
-investigate relationships between variables,
-
-visualize power-generation behavior, and
-
-prepare operational data for subsequent predictive modelling.
-
-The project therefore serves as a foundation for a later wind-power prediction workflow.
-
-Source
-
-The analysis is based on the Spatial Dynamic Wind Power Forecasting (SDWPF) dataset and the associated exploratory-analysis learning material. The provided material describes the dataset as containing data from 134 wind turbines and links to the SDWPF research paper.
-
-Research paper:
-
-https://arxiv.org/abs/2208.04360
-
-Portfolio Context
-
-This repository represents a Python and data-analysis practice project focused on exploratory analysis of wind-energy data.
-
-It demonstrates practical experience with a real-world energy dataset and complements broader interests in data analysis, optimization, quantitative modelling, risk-aware decision-making, and energy systems.
