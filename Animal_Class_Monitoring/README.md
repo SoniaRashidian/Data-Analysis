@@ -371,4 +371,5 @@ These characteristics should be considered before developing a classification mo
 * Python programming
 * Critical assessment of machine-learning data quality
 
-**Project Source: AI & climate change by deeplearning.AI 
+**Project Source [AI for Good on Coursera].
+  [link]:https://www.coursera.org/specializations/ai-for-good
