@@ -1,8 +1,8 @@
 # 🌍 Global Temperature Analysis
 
-A Python data-analysis project exploring global temperature changes using historical weather station data from 1880 to 2021.
+A data-analysis project exploring global temperature changes using historical weather station data from 1880 to 2021.
 
-This project was developed as part of my Python programming and data-analysis practice. The goal is to use Python to investigate long-term temperature patterns, calculate temperature anomalies, and visualize changes in global temperature over time.
+This project was developed as part of my Python programming and data analysis practice. The goal is to investigate long-term temperature patterns, calculate temperature anomalies, and visualize changes in global temperature over time.
 
 ## 📊 Project Objectives
 
@@ -17,30 +17,9 @@ This project was developed as part of my Python programming and data-analysis pr
 
 ## 🗂️ Dataset
 
-The dataset contains yearly temperature observations from weather stations around the world covering the period from 1880 to 2021.
+The dataset contains yearly temperature observations from weather stations around the world, covering the period from 1880 to 2021.
 
 The original data was compiled from publicly available climate datasets from NOAA.
-
-## 🛠️ Technologies
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Jupyter Notebook
-
-## 📚 Python Concepts Practiced
-
-- Reading CSV files with Pandas
-- DataFrame manipulation
-- Handling missing values
-- NumPy arrays
-- Statistical calculations
-- Rolling averages
-- Linear trend analysis
-- Data visualization
-- Functions
-- Data cleaning
 
 ## 📈 Analysis
 
@@ -72,33 +51,4 @@ Day05_GlobalTemperatureAnalysis/
     └── global_temperature.csv
 ```
 
-## ▶️ How to Run
 
-Install the required packages:
-
-```bash
-pip install pandas numpy matplotlib jupyter
-```
-
-Then open the notebook:
-
-```bash
-jupyter notebook
-```
-
-Open:
-
-```text
-global_temperature_analysis.ipynb
-```
-
-and run the cells.
-
-## 🚀 Future Improvements
-
-- Add interactive geographical maps
-- Analyze temperature trends by continent
-- Compare different climate regions
-- Add statistical significance testing
-- Investigate relationships between temperature and extreme weather events
-- Create an interactive dashboard
