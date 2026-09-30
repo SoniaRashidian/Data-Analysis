@@ -93,4 +93,4 @@ Learning Outcome:
 
 This project provided practical experience in moving from raw operational data to structured exploratory analysis.
 
-
+**[project source]:** https://www.coursera.org/specializations/ai-for-good
