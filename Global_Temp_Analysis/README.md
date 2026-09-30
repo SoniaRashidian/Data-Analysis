@@ -1,6 +1,6 @@
 # 🌍 Global Temperature Analysis
 
-A data-analysis project exploring global temperature changes using historical weather station data from 1880 to 2021.
+A data analysis project exploring global temperature changes using historical weather station data from 1880 to 2021.
 
 This project was developed as part of my Python programming and data analysis practice. The goal is to investigate long-term temperature patterns, calculate temperature anomalies, and visualize changes in global temperature over time.
 
@@ -50,5 +50,5 @@ Day05_GlobalTemperatureAnalysis/
 └── data/
     └── global_temperature.csv
 ```
-
+**[project source]:** https://www.coursera.org/specializations/ai-for-good
 
